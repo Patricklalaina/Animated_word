@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animate word</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "JetBrains Mono", monospace;
+		}
+
+		div.render img {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+		}
+
+		div.render p {
+			margin-left: 30px;
+			text-align: justify;
+			line-height: 2;
+			font-size: large;
+			font-weight: 300;
+		}
+
+		div.render {
+			width: 30%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding: 50px;
+			background-color: #eee;
+			border-radius: 5%;
+			margin-top: 250px;
+		}
+	</style>
+</head>
+<body>
+	<div class="render">
+		<img src="image.jpg" alt="" id="profil_auteur">
+		<p><i>"La vie est comme un livre: ne jamais sauter aucun chapitre et continuer de tourner les pages. Tot ou tard, on comprendra pourquoi chaque paragraphe etait necessaire"</i> <br>Bernard Werber</p>
+	</div>
+	<script>
+		const citation = document.querySelector('p')
+		let content = citation.innerText
+		citation.innerText = content[0]
+		let idx = 0;
+
+		display_frag_text();
+
+		function display_frag_text() {
+			citation.innerText = content.substring(0, idx)
+			if ( idx == content.length) {
+				idx = 0;
+			}
+			idx++;
+			setTimeout(() => {
+				display_frag_text();
+			}, 150);
+		}
+	</script>
+</body>
+</html>
