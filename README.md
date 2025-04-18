@@ -1,2 +1,3 @@
-# Animated_word
-Premier test pour les chaines de caracteres animes
+## Animated_word
+
+[Lien vers demo](https://patricklalaina.github.io/Animated_word/)
